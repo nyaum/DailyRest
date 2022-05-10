@@ -58,6 +58,8 @@ class rest():
                 # print(i.datename.string, ':', result, weekname, '입니다')
                 if diff.days > 0:
                     diffresult.append('다음 공휴일인 ' + i.datename.string + '까지 ' + str(diff.days+1) + '일 남았습니다.')
+                elif diff.days == 0:
+                    diffresult.append('오늘은 ' + i.datename.string + ' 입니다.')
 
         # strftoday = today.strftime("작성일 : %Y년 %m월 %d일 \n\n".encode('unicode-escape').decode())
         # strftoday = strftoday.encode().decode('unicode-escape')

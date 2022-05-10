@@ -1,4 +1,3 @@
-import common as c
 import schedule as sc
 import time
 import mealTime
