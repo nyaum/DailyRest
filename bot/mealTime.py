@@ -1,12 +1,10 @@
 import common as c
 import schedule as sc
-from datetime import datetime
 
 class mealTime():
    def breakfast():
       print("---------------------아침 글 작성 시작---------------------")
-      dt_now = datetime.now()
-      result = dt_now.strftime("현재 시간은 %H시 %M분, 아침 시간입니다".encode('unicode-escape').decode())
+      result = c.today.strftime("현재 시간은 %H시 %M분, 아침 시간입니다".encode('unicode-escape').decode())
       result = result.encode().decode('unicode-escape')      
       breakfast_result = c.strftoday + result
 
@@ -20,8 +18,7 @@ class mealTime():
 
    def lunch():
       print("---------------------점심 글 작성 시작---------------------")
-      dt_now = datetime.now()
-      result = dt_now.strftime("현재 시간은 %H시 %M분, 점심 시간입니다".encode('unicode-escape').decode())
+      result = c.today.strftime("현재 시간은 %H시 %M분, 점심 시간입니다".encode('unicode-escape').decode())
       result = result.encode().decode('unicode-escape')      
       lunch_result = c.strftoday + result
 
@@ -35,8 +32,7 @@ class mealTime():
 
    def dinner():
       print("---------------------저녁 글 작성 시작---------------------")
-      dt_now = datetime.now()
-      result = dt_now.strftime("현재 시간은 %H시 %M분, 저녁 시간입니다".encode('unicode-escape').decode())
+      result = c.today.strftime("현재 시간은 %H시 %M분, 저녁 시간입니다".encode('unicode-escape').decode())
       result = result.encode().decode('unicode-escape')
       dinner_result = c.strftoday + result
       
@@ -50,8 +46,7 @@ class mealTime():
 
    # 테스트 코드
    # def test():
-   #    dt_now = datetime.now()
-   #    result = dt_now.strftime("현재 시간은 %H시 %M분, test 시간입니다".encode('unicode-escape').decode())
+   #    result = c.today.strftime("현재 시간은 %H시 %M분, test 시간입니다".encode('unicode-escape').decode())
    #    result = result.encode().decode('unicode-escape')
    #    c.api.update_status(result)
 
