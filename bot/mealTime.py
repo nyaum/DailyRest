@@ -12,9 +12,9 @@ class mealTime():
 
       try:
          c.api.update_status(breakfast_result)
-         print('아침 글 작성 완료')
+         print('---------------------아침 글 작성 완료---------------------')
       except:
-         print('아침 글 작성 실패')
+         print('---------------------아침 글 작성 실패---------------------')
 
    sc.every().day.at("07:00:01").do(breakfast)
 
@@ -27,9 +27,9 @@ class mealTime():
 
       try:
          c.api.update_status(lunch_result)
-         print('점심 글 작성 완료')
+         print('---------------------점심 글 작성 완료---------------------')
       except:
-         print('점심 글 작성 실패')
+         print('---------------------점심 글 작성 실패---------------------')
 
    sc.every().day.at("12:00:01").do(lunch)
 
@@ -42,9 +42,9 @@ class mealTime():
       
       try:
          c.api.update_status(dinner_result)
-         print('저녁 글 작성 완료')
+         print('---------------------저녁 글 작성 완료---------------------')
       except:
-         print('저녁 글 작성 실패')
+         print('---------------------저녁 글 작성 실패---------------------')
          
    sc.every().day.at("19:00:01").do(dinner)
 
