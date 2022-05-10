@@ -1,3 +1,2 @@
-bot/__pycache__/common.cpython-36.pyc
-bot/__pycache__/mealTime.cpython-36.pyc
-bot/__pycache__/rest.cpython-36.pyc
+bot/__pycache__/*
+bot/key.py

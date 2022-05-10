@@ -5,6 +5,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import urllib.parse as urlparse
 import schedule as sc
+import key as k
 
 class rest():
     def rest():
@@ -27,7 +28,7 @@ class rest():
             else:
                 month = str(month)
 
-            mykey = c.REST_AUTH_KEY
+            mykey = k.REST_AUTH_KEY
             url = 'http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService'
             operation = 'getRestDeInfo'
             year = c.nowyear
