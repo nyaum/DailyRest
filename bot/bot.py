@@ -1,15 +1,8 @@
 import common as c
 import schedule as sc
 import time
-import sys
 import mealTime
 import rest
-
-try:
-   print('---------------정상 실행----------------')
-except:
-   print('---------------실행 실패----------------')
-   sys.exit()
 
 # 실행
 mealTime.mealTime()
