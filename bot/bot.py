@@ -2,8 +2,8 @@ import common as c
 import schedule as sc
 import time
 import sys
-import mealTime as mt
-from pytimekr import pytimekr
+import mealTime
+import rest
 
 try:
    print('---------------정상 실행----------------')
@@ -12,7 +12,8 @@ except:
    sys.exit()
 
 # 실행
-mt.mealTime()
+mealTime.mealTime()
+rest.rest()
 
 # 무한 루프문
 while True:
