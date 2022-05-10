@@ -27,10 +27,10 @@ class rest():
             else:
                 month = str(month)
 
-            mykey = "w7Ycwo9qcSFEoKkPtsvvg1ww8vxweOXvChmlMql3HZxutjR%2FYbmn7vWJONRUy25Zozng3hSvyKOGMM5glY%2BRWw%3D%3D"
+            mykey = c.REST_AUTH_KEY
             url = 'http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService'
             operation = 'getRestDeInfo'
-            year = 2022
+            year = c.nowyear
             
             params = {'solYear':year, 'solMonth':month}
 
@@ -50,20 +50,20 @@ class rest():
                 day = datetime.strptime(i.locdate.get_text(), "%Y%m%d")
                 # result = day.strftime("%m월 %d일".encode('unicode-escape').decode())
                 # result = result.encode().decode('unicode-escape')
-                today = dt.datetime.now()
-                diff = day - today
+                # today = dt.datetime.now()
+                diff = day - c.today
                 
                 # print(i.datename.string, ':', result, weekname, '입니다')
                 if diff.days > 0:
                     diffresult.append('다음 공휴일인 ' + i.datename.string + '까지 ' + str(diff.days+1) + '일 남았습니다.')
 
-        strftoday = today.strftime("작성일 : %Y년 %m월 %d일 \n\n".encode('unicode-escape').decode())
-        strftoday = strftoday.encode().decode('unicode-escape')
+        # strftoday = today.strftime("작성일 : %Y년 %m월 %d일 \n\n".encode('unicode-escape').decode())
+        # strftoday = strftoday.encode().decode('unicode-escape')
 
-        write = strftoday + diffresult[0]
-        c.api.update_status(write)
+        write = c.strftoday + diffresult[0]
 
         try:
+            c.api.update_status(write)
             print('휴일 디데이 글 작성 완료')
         except:
             print('휴일 디데이 글 작성 실패')
