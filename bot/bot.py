@@ -2,10 +2,13 @@ import schedule as sc
 import time
 import mealTime
 import rest
+import common as c
 
 # 실행
 mealTime.mealTime()
 rest.rest()
+
+sc.every(10).minutes.do(c.restart)
 
 # 무한 루프문
 while True:

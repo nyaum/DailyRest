@@ -2,6 +2,7 @@ import tweepy
 import datetime as dt
 import sys
 import key as k
+import os
 
 try:
     auth = tweepy.OAuthHandler(
@@ -12,10 +13,10 @@ try:
     )
 
     api = tweepy.API(auth)
-    print("---------------------정상 실행---------------------")
+    print("\n---------------------정상 실행---------------------")
 
 except:
-    print("---------------------실행 실패---------------------")
+    print("\n---------------------실행 실패---------------------")
     sys.exit()
 
 today = dt.datetime.now()
@@ -30,3 +31,6 @@ if endyear == strftoday2:
 
 strftoday = today.strftime("작성일 : %Y년 %m월 %d일 \n\n".encode('unicode-escape').decode())
 strftoday = strftoday.encode().decode('unicode-escape')
+
+def restart():
+    os.execl(sys.executable, sys.executable, *sys.argv)
