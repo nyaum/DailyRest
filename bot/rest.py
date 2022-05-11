@@ -69,7 +69,8 @@ class rest():
         try:
             c.api.update_status(write)
             print('\n---------------------휴일 디데이 글 작성 완료---------------------')
-        except:
+        except Exception as e:
             print('\n---------------------휴일 디데이 글 작성 실패---------------------')
+            print(e)
 
     sc.every().day.at("00:00:01").do(rest)
