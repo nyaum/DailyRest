@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import urllib.parse as urlparse
 import schedule as sc
 import key as k
+import log
 
 class rest():
     def rest():
@@ -71,6 +72,6 @@ class rest():
             print('\n---------------------휴일 디데이 글 작성 완료---------------------')
         except Exception as e:
             print('\n---------------------휴일 디데이 글 작성 실패---------------------')
-            print(e)
+            log.log()
 
-    sc.every().day.at("00:00:01").do(rest)
+    sc.every().day.at("00:01:00").do(rest)

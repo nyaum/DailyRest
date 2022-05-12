@@ -3,6 +3,7 @@ import datetime as dt
 import sys
 import key as k
 import os
+import log
 
 today = dt.datetime.now()
 nowyear = today.strftime("%Y")
@@ -30,7 +31,7 @@ try:
 
 except Exception as e:
     print("\n---------------------실행 실패---------------------")
-    print(e)
+    log.log()
     sys.exit()
 
 def restart():
