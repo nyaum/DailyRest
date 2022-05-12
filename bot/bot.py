@@ -8,7 +8,7 @@ import common as c
 mealTime.mealTime()
 rest.rest()
 
-sc.every(10).minutes.do(c.restart)
+sc.every(13).minutes.do(c.restart)
 
 # 무한 루프문
 while True:

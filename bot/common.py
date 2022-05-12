@@ -10,6 +10,8 @@ nowyear = today.strftime("%Y")
 
 endyear = nowyear + '1231'
 strftoday2 = today.strftime("%Y%m%d")
+hours_minutes = today.strftime("%H시 %M분".encode('unicode-escape').decode())
+hours_minutes = hours_minutes.encode().decode('unicode-escape')
 # strftoday2 = '20221231'
 
 if endyear == strftoday2:
@@ -17,6 +19,9 @@ if endyear == strftoday2:
 
 strftoday = today.strftime("작성일 : %Y년 %m월 %d일 \n\n".encode('unicode-escape').decode())
 strftoday = strftoday.encode().decode('unicode-escape')
+
+def restart():
+    os.execl(sys.executable, sys.executable, *sys.argv)
 
 try:
     auth = tweepy.OAuthHandler(
@@ -31,8 +36,6 @@ try:
 
 except Exception as e:
     print("\n---------------------실행 실패---------------------")
-    log.log()
-    sys.exit()
+    log.fail_log()
+    restart()
 
-def restart():
-    os.execl(sys.executable, sys.executable, *sys.argv)

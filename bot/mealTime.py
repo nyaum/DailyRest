@@ -14,7 +14,7 @@ class mealTime():
          print('\n---------------------아침 글 작성 완료---------------------')
       except Exception as e:
          print('\n---------------------아침 글 작성 실패---------------------')
-         log.log()
+         log.fail_log()
 
    sc.every().day.at("07:00:01").do(breakfast)
 
@@ -29,7 +29,7 @@ class mealTime():
          print('\n---------------------점심 글 작성 완료---------------------')
       except Exception as e:
          print('\n---------------------점심 글 작성 실패---------------------')
-         log.log()
+         log.fail_log()
 
    sc.every().day.at("12:00:01").do(lunch)
 
@@ -44,7 +44,7 @@ class mealTime():
          print('\n---------------------저녁 글 작성 완료---------------------')
       except Exception as e:
          print('---------------------저녁 글 작성 실패---------------------')
-         log.log()
+         log.fail_log()
          
    sc.every().day.at("19:00:01").do(dinner)
 

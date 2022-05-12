@@ -2,4 +2,3 @@ bot/__pycache__/*
 bot/key.py
 bot/test.py
 bot/log/*
-bot/log.py
