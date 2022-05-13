@@ -4,16 +4,16 @@ import mealTime
 import rest
 import common as c
 
-# 실행
-mealTime.mealTime()
-rest.rest()
-
-sc.every(13).minutes.do(c.restart)
-
 # 무한 루프문
 while True:
    sc.run_pending()
    time.sleep(1)
+
+   # 실행
+   mealTime.mealTime()
+   rest.rest()
+
+   sc.every(30).minutes.do(c.restart)
 
 # now = datetime(2022, 5, 9, 11, 30)
 

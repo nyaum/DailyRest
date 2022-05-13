@@ -74,4 +74,4 @@ class rest():
             print('\n---------------------휴일 디데이 글 작성 실패---------------------')
             log.fail_log()
 
-    sc.every().day.at("00:05:00").do(rest)
+    sc.every().day.at("00:02:00").do(rest)
